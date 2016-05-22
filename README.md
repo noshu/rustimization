@@ -22,10 +22,10 @@ Output
 ```
 [-4.000000000000021]
 ```
-here Funcmin constructor takes four parameter first one is initial estimation x second and third one is the function f and
+here Funcmin constructor takes four parameters first one is initial estimation x second and third one is the function f and
 the gradient g of the function respectively and forth one is the algorithm you want to use. Currently two algorithms 
-avialabel **"cg"** and **"lbfgsb"**
-if you want more parameter tuning you can use the clases of the algorithm such as for Lbbfgsb_minimizer clas
+available **"cg"** and **"lbfgsb"**
+if you want more parameter tuning you can use the classes of the algorithm such as for Lbbfgsb_minimizer class
 ###Example
 ```rust
 let f = |x:&Vec<f64>|{ (x[0]+4.0).powf(2.0)};
@@ -116,9 +116,9 @@ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL
 convergence!
 ```
 ##Requirements
-to use this library you must have **gfortran** installed in your pc
+To use this library you must have **gfortran** installed in your pc
 * for **windows** use fortran compiler provided by [mingw](http://www.mingw.org/) or [TDM-GCC](http://tdm-gcc.tdragon.net/)
-* for **linux** youcan use the package manager to install gfortran
+* for **linux** you can use the package manager to install gfortran
 * for Mac os you can install it form [here](http://hpc.sourceforge.net/) or [here](http://sourceforge.net/projects/hpc/files/hpc/g95/gfortran-mlion.tar.gz)
 
 The orginal **L-BFGS-B** fortran subroutine is distributed under BSD-3 license. To know more about the condition to use this fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html).
