@@ -121,8 +121,9 @@ to use this library you must have **gfortran** installed in your pc
 * for **linux** youcan use the package manager to install gfortran
 * for Mac os you can install it form [here](http://hpc.sourceforge.net/) or [here](http://sourceforge.net/projects/hpc/files/hpc/g95/gfortran-mlion.tar.gz)
 
-The orginal **L-BFGS-B** fortran subroutine is distributed under BSD-3 license. To know more about the condition to use these fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html)
-and To know more about the condition to use the **Conjugate Gradient** Fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html) 
+The orginal **L-BFGS-B** fortran subroutine is distributed under BSD-3 license. To know more about the condition to use this fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html).
+
+To know more about the condition to use the **Conjugate Gradient** Fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html) 
 
 ##References
 1. R. H. Byrd, P. Lu and J. Nocedal. [A Limited Memory Algorithm for Bound Constrained Optimization](http://www.ece.northwestern.edu/~nocedal/PSfiles/limited.ps.gz), (1995), SIAM Journal on Scientific and Statistical Computing , 16, 5, pp. 1190-1208.
