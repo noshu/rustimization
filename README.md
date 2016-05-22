@@ -23,8 +23,8 @@ Output
 [-4.000000000000021]
 ```
 here Funcmin constructor takes four parameter first one is initial estimation x second and third one is the function f and
-the gradient g of the function respectively and forth one is the alogorithm you want to use. Currently two algorithms 
-avialabel "cg" and "lbfgsb"
+the gradient g of the function respectively and forth one is the algorithm you want to use. Currently two algorithms 
+avialabel **"cg"** and **"lbfgsb"**
 if you want more parameter tuning you can use the clases of the algorithm such as for Lbbfgsb_minimizer clas
 ###Example
 ```rust
@@ -121,8 +121,8 @@ to use this library you must have **gfortran** installed in your pc
 * for **linux** youcan use the package manager to install gfortran
 * for Mac os you can install it form [here](http://hpc.sourceforge.net/) or [here](http://sourceforge.net/projects/hpc/files/hpc/g95/gfortran-mlion.tar.gz)
 
-The orginal ***L-BFGS-B* fortran subroutine is distributed under BSD-3 license. To know more about the condition to use these fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html)
-and To know more about the condition to use the Conjugate Gradient Fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html) 
+The orginal **L-BFGS-B** fortran subroutine is distributed under BSD-3 license. To know more about the condition to use these fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html)
+and To know more about the condition to use the **Conjugate Gradient** Fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html) 
 
 ##References
 1. R. H. Byrd, P. Lu and J. Nocedal. [A Limited Memory Algorithm for Bound Constrained Optimization](http://www.ece.northwestern.edu/~nocedal/PSfiles/limited.ps.gz), (1995), SIAM Journal on Scientific and Statistical Computing , 16, 5, pp. 1190-1208.
