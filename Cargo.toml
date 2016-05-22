@@ -1,0 +1,9 @@
+[package]
+name = "rustimization"
+version = "0.1.0"
+authors = ["noshu <naushad1290@gmail.com>"]
+
+[dependencies]
+lbfgsb-sys = {git = "https://github.com/noshu/lbfgsb-sys"}
+cg-sys = {git = "https://github.com/noshu/cg-sys"}
+libc = "*"
