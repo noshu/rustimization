@@ -6,7 +6,6 @@ The simplest way to use these optimization algorithm is to use the Funcmin class
 ```rust
 extern crate rustimization;
 use rustimization::minimizer::Funcmin;
-#[test]
 fn test(){
     let f = |x: &Vec<f64>| { (x[0]+4.0).powf(2.0)};
     let g = |x: &Vec<f64>| {vec![2.0*(x[0]+4.0)]};
