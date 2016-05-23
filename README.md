@@ -22,8 +22,8 @@ Output
 ```
 [-4.000000000000021]
 ```
-here Funcmin constructor takes four parameters first one is initial estimation x second and third one is the function f and
-the gradient g of the function respectively and forth one is the algorithm you want to use. Currently two algorithms 
+here Funcmin constructor takes four **parameters** first one is initial estimation **x** second and third one is the function **f** and
+the derivative **g** of the function respectively and forth one is the algorithm you want to use. Currently two algorithms 
 available **"cg"** and **"lbfgsb"**
 if you want more parameter tuning you can use the classes of the algorithm such as for Lbbfgsb_minimizer class
 ###Example
