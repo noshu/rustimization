@@ -17,20 +17,17 @@ impl<'a> Funcmin<'a>{
     }
     //this function will start the optimization algorithm
     pub fn minimize(&mut self){
-        let ver = match self.verbose {
-            true=>0,
-            false=>-1
-        };
+        let ver = if self.verbose { 0 } else { 1 };
         {
             if self.method== "lbfgsb"{
-                let mut minf = Lbfgsb::new(&mut self.x,&self.f,&self.g);
+                let mut minf = Lbfgsb::new(&mut self.x, self.f, self.g);
                 minf.set_verbosity(ver);
                 minf.set_tolerance(self.tol);
                 minf.max_iteration(self.max_iter);
                 minf.minimize();
             }
             else if self.method== "cg"{
-                let mut minf = CG::new(&mut self.x,&self.f,&self.g);
+                let mut minf = CG::new(&mut self.x, self.f, self.g);
                 minf.set_verbosity(vec![ver,0]);
                 minf.set_tolerance(self.tol);
                 minf.max_iteration(self.max_iter);

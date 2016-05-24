@@ -29,35 +29,33 @@ impl<'a> CG<'a>{
     pub fn minimize(&mut self){
         let func = self.f;
         let grad = self.g;
-        let mut fval = func(& self.x);
-        let mut gval = grad(& self.x);
+        let mut fval = func(self.x);
+        let mut gval = grad(self.x);
         let icall = 0;
-       //start of the loop
-       loop{
+        //start of the loop
+        loop{
            //callign the fortran routine
            step(self.n,&mut self.x,fval,&gval,&mut self.d,&mut self.gold,&self.iprint,&mut self.w,self.eps,
                 &mut self.iflag ,self.irest,self.method,self.finish);
-            if self.iflag<=0 || icall>=self.max_iter{
-                break;
-            }
-            //geting the function and gradient value
-            else if self.iflag==1{
-                fval = func(& self.x);
-                gval = grad(& self.x);
-            }
-            //termination check
-            else if self.iflag==2{
-                self.finish = 1;
-                let tlev = self.eps*(1.0+fval.abs());
-                for i in 0..self.x.len(){
-                    if gval[i]>tlev{
-                        self.finish = 0;
-                        break;
-                    }
-                }           
-            }
-            else{
-                break;
+            if icall > self.max_iter { break; }
+            match self.iflag {
+                //geting the function and gradient value
+                1 => {
+                    fval = func(self.x);
+                    gval = grad(self.x);
+                },
+                //termination check
+                2 => {
+                    self.finish = 1;
+                    let tlev = self.eps*(1.0+fval.abs());
+                    for l in gval.iter().take(self.x.len()) {
+                        if *l >tlev {
+                            self.finish = 0;
+                            break;
+                        }
+                    }           
+                },
+                _ => break
             }
         }
     }

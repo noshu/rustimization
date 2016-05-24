@@ -49,18 +49,15 @@ impl<'a> Lbfgsb<'a>{
             //converting to rust string
             let tsk = unsafe{CStr::from_ptr(self.task.as_ptr()).to_string_lossy()};
             if &tsk[0..2]=="FG" {
-                fval = func(& self.x);
-                gval = grad(& self.x);
+                fval = func(self.x);
+                gval = grad(self.x);
             }
-            if &tsk[0..5]=="NEW_X" && self.max_iter==0{
-                if self.dsave[11]<=1.0e-10*(1.0e0+fval.abs()){
-                    println!("THE PROJECTED GRADIENT IS SUFFICIENTLY SMALL");
-                    break;
-                }
+            if &tsk[0..5]=="NEW_X" && self.max_iter==0 &&
+               self.dsave[11]<=1.0e-10*(1.0e0+fval.abs()){
+                println!("THE PROJECTED GRADIENT IS SUFFICIENTLY SMALL");
+                break;
             }
-            if self.max_iter>0{
-                if self.isave[29]>= self.max_iter as i32 {break;}
-            }
+            if self.max_iter>0 && self.isave[29]>= self.max_iter as i32 {break;}
             if &tsk[0..4]=="CONV"{
                 println!("convergence!");
                 break;
@@ -85,7 +82,7 @@ impl<'a> Lbfgsb<'a>{
         }
         else{
             let temp = self.nbd[index]-1;
-            self.nbd[index] = if temp<0{temp*(-1)}else{temp};
+            self.nbd[index] = if temp<0{-temp}else{temp};
             self.l[index] = value;
         }
     }
