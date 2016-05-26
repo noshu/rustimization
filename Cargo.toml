@@ -1,6 +1,6 @@
 [package]
 name = "rustimization"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["noshu <naushad1290@gmail.com>"]
 license = "MIT"
 readme = "README.md"

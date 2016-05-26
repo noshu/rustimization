@@ -8,8 +8,9 @@ fn test(){
     {
     let mut fmin = Lbfgsb::new(&mut x,&f,&g);
     fmin.set_upper_bound(0,100.0);
-    fmin.set_lower_bound(0,10.0);
-    fmin.set_verbosity(101);
+    //fmin.set_lower_bound(0,10.0);
+    fmin.set_verbosity(-1);
+    fmin.max_iteration(100);
     fmin.minimize();
     }
     println!("{:?}",x);
