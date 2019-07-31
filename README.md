@@ -1,7 +1,9 @@
 # rustimization
+
 A rust optimization library which includes **L-BFGS-B** and **Conjugate Gradient** algorithm.
 
-##Documentation
+## Documentation
+
 The simplest way to use these optimization algorithm is to use the Funcmin class.
 ```rust
 extern crate rustimization;
@@ -26,7 +28,9 @@ here Funcmin constructor takes four **parameters** first one is initial estimati
 the derivative **g** of the function respectively and forth one is the algorithm you want to use. Currently two algorithms 
 available **"cg"** and **"lbfgsb"**
 if you want more parameter tuning you can use the classes of the algorithm such as for Lbbfgsb_minimizer class
-###Example
+
+### Example
+
 ```rust
 let f = |x:&Vec<f64>|{ (x[0]+4.0).powf(2.0)};
     let g = |x:&Vec<f64>|{vec![2.0*(x[0]+4.0)]};
@@ -115,7 +119,9 @@ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL
 
 convergence!
 ```
-##Requirements
+
+## Requirements
+
 To use this library you must have **gfortran** installed in your pc
 * for **windows** use fortran compiler provided by [mingw](http://www.mingw.org/) or [TDM-GCC](http://tdm-gcc.tdragon.net/)
 * for **linux** you can use the package manager to install gfortran
@@ -125,7 +131,8 @@ The orginal **L-BFGS-B** fortran subroutine is distributed under BSD-3 license. 
 
 To know more about the condition to use the **Conjugate Gradient** Fortran routine please go [here](http://users.iems.northwestern.edu/~nocedal/lbfgsb.html) 
 
-##References
+## References
+
 1. R. H. Byrd, P. Lu and J. Nocedal. [A Limited Memory Algorithm for Bound Constrained Optimization](http://www.ece.northwestern.edu/~nocedal/PSfiles/limited.ps.gz), (1995), SIAM Journal on Scientific and Statistical Computing , 16, 5, pp. 1190-1208.
 2. C. Zhu, R. H. Byrd and J. Nocedal. [L-BFGS-B: Algorithm 778: L-BFGS-B, FORTRAN routines for large scale bound constrained optimization](http://www.ece.northwestern.edu/~nocedal/PSfiles/lbfgsb.ps.gz) (1997), ACM Transactions on Mathematical Software, Vol 23, Num. 4, pp. 550 - 560.
 3. J.L. Morales and J. Nocedal. [L-BFGS-B: Remark on Algorithm 778: L-BFGS-B, FORTRAN routines for large scale bound constrained optimization](http://www.ece.northwestern.edu/~morales/PSfiles/acm-remark.pdf) (2011), to appear in ACM Transactions on Mathematical Software.
