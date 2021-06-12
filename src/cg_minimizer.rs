@@ -47,7 +47,7 @@ impl<'a> CG<'a> {
         let grad = self.g;
         let mut fval = func(self.x);
         let mut gval = grad(self.x);
-        let icall = 0;
+        let mut icall = 0;
         // start of the loop
         loop {
             // callign the fortran routine
@@ -64,6 +64,7 @@ impl<'a> CG<'a> {
                  self.irest,
                  self.method,
                  self.finish);
+            icall += 1;
             if icall > self.max_iter {
                 break;
             }
